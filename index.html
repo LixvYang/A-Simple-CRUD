@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web开发初学</title>
+</head>
+<body>
+    <section>
+
+    </section>
+    <script>
+        const section = document.querySelector('section');
+
+        let requestURL = 'datab.json';
+        let request = new XMLHttpRequest;
+        request.open('GET',requestURL);
+        request.responseType='json';
+        request.send();
+
+        request.onload = function(){
+            const people = request.response;
+            data(people);
+
+            function data(obj){
+                const peoples = obj['people'];
+                
+                for(let i = 0; i < peoples.length; i++){
+                    const myArticle = document.createElement('article');
+                    const myH1 = document.createElement('h1');
+                    const mypara1 = document.createElement('p');
+                    const mypara2 = document.createElement('p');
+                    const mypara3 = document.createElement('p');
+                    const myList = document.createElement('ul');
+
+                    myH1.textContent = peoples[i].name;
+                    mypara1.textContent = 'age :' + peoples[i].age;
+                    mypara2.textContent = 'birthday :' + peoples[i].birthday;
+
+                    const peopleHobby = peoples[i].hobby;
+                    for(let j=0;j<peopleHobby.length;j++){
+                        const listItem = document.createElement('li');
+                        listItem.textContent = peopleHobby[j];
+                        myList.appendChild(listItem);
+                    }
+                    myArticle.appendChild(myH1);
+                    myArticle.appendChild(mypara1);
+                    myArticle.appendChild(mypara2);
+                    myArticle.appendChild(mypara3);
+                    myArticle.appendChild(myList);
+                    section.appendChild(myArticle);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

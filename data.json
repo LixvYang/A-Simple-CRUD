@@ -1,0 +1,33 @@
+{
+"people":[
+    {"name":"弗兰克",
+    "gender":true,
+    "age":"31",
+    "birthday":1989,
+    "hobby":[
+        "writing",
+        "planting"
+    ]
+    },
+    {
+    "name":"杰克逊",
+    "gender":true,
+    "age":"20",
+    "birthday":2020,
+    "hobby":[
+        "studying",
+        "jumping"
+    ]
+    },
+    {
+    "name":"威尔逊",
+    "gender":false,
+    "age":"30",
+    "birthday":1990,
+    "hobby":[
+        "coding",
+        "reading"
+    ]
+    }
+    ]
+}
